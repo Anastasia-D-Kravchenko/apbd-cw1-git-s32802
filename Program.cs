@@ -7,6 +7,11 @@ Console.WriteLine("Welcome to the Statistics App!");
 Console.WriteLine("Please enter a series of numbers separated by spaces:");
 
 string? input = Console.ReadLine();
-string[] numbers = input?.Split(' ') ?? Array.Empty<string>();
 
-Console.WriteLine($"You entered {numbers.Length} potential numbers.");
+if (string.IsNullOrWhiteSpace(input)) {
+    Console.WriteLine("Error: No data was entered. Please provide at least one number.");
+}
+else {
+    string[] numbers = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    Console.WriteLine($"Processing {numbers.Length} numbers...");
+}
