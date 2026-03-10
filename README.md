@@ -1,17 +1,16 @@
-## Task 1: Environment Setup and Initial Repository
+## Task 2: Clean History and Browsing History
 
-This project is a simple .NET console application. This section documents the initial configuration and connection to GitHub.
+### 1. Development Process
 
----
+The goal of this phase was to build a readable and logical commit history. Rather than submitting one large update, the project was developed through several small, distinct steps:
 
-### How to use this project
+* **Commit 1:** Added the `StatisticsHelper` class to separate logic from the entry point.
 
-To run this application locally:
-1. Ensure you have the **.NET 10 SDK** installed.
-2. Open your terminal in the project root folder.
-3. Execute the command:
 
-```bash
-dotnet run
+* **Commit 2:** Implemented basic input handling in `Program.cs` to accept numbers from the user.
 
-```
+
+* **Commit 3:** Added a specific error message and validation for cases where the user provides no data.
+
+
+* **Commit 4:** Refactored the main logic loop to support persistent user interaction and the "exit" command.
