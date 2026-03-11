@@ -32,4 +32,10 @@ public class StatisticsHelper
         }
         return max;
     }
+    
+    public static int CalculateMin(int[] numbers)
+    {
+        // Skeleton: logic to be added in next commit
+        return 0;
+    }
 }
