@@ -1,5 +1,6 @@
 ﻿using apbd_cw1_git_s32802;
 
+Console.WriteLine("Statistics App v1.1 - Improved Performance");
 while (true)
 {
     Console.WriteLine("\nEnter numbers separated by spaces (or type 'exit' to quit):");
