@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
-
-using apbd_cw1_git_s32802;
+﻿using apbd_cw1_git_s32802;
 
 while (true)
 {
@@ -15,8 +12,18 @@ while (true)
         Console.WriteLine("Invalid input. Try again.");
         continue;
     }
-    
-    string[] numbers = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-    Console.WriteLine($"Processing {numbers.Length} numbers...");
+    try
+    {
+        int[] numbers = input.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                             .Select(int.Parse)
+                             .ToArray();
+
+        double average = StatisticsHelper.CalculateAverage(numbers);
+        Console.WriteLine($"The average is: {average}");
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine("Error: Please enter only valid integers separated by spaces.");
+    }
 }
