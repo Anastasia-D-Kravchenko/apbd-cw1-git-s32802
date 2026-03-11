@@ -1,22 +1,26 @@
-## Task 4: Fast-Forward Merge
+## Submission Questions
 
-For this task, a new branch `feature-average` was created to implement the `CalculateAverage` method. 
+### 1. When does Git perform a fast-forward and when is a merge commit created?
 
-* **Process**: After committing the changes to the feature branch, I switched back to `main`. 
-
-
-* **Result**: Since no new commits were made on `main` during this time, Git performed a **Fast-Forward** merge, simply moving the `main` pointer to the latest commit of the feature branch. 
+* **Fast-forward:** This occurs when the base branch (`main`) has no new commits since the feature branch was created. Git simply moves the pointer forward to the latest commit.
 
 
-
-## Task 5: Merge without Fast-Forward
-
-A new branch `feature-max` was created to implement the `CalculateMax` method. 
-
-* **Divergence**: Before merging, an independent commit was added directly to `main` (updating this README). 
+* **Merge Commit:** This is created when the two branches have diverged, meaning both `main` and the feature branch have unique, independent commits. Git must create a new commit to join these two paths.
 
 
-* **Result**: Because both branches now had unique, different commits, a **Merge Commit** was created to join the two paths. 
+
+### 2. What is the practical difference between merge and rebase?
+
+* **Merge:** It preserves the chronological history and shows exactly when branches were created and joined, often resulting in a "diamond" shape in the logs.
 
 
-* **Why not Fast-Forward?**: Git could not perform a Fast-Forward because the history had diverged; there was no linear path from the base of the feature branch to the new tip of `main`. 
+* **Rebase:** It "rewrites" history by moving the feature branch commits to the tip of `main`, creating a clean, linear history that looks like a single straight line.
+
+
+
+### 3. How was the conflict resolved in your repository?
+
+* In my repository, the conflict was triggered by modifying the same line in `Program.cs` on two different branches.
+
+
+* I resolved it by manually editing the file in Rider, removing the Git conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`), and choosing the final version of the code that allowed the application to remain functional.
