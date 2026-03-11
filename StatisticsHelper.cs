@@ -14,4 +14,22 @@ public class StatisticsHelper
 
         return (double)sum / numbers.Length;
     }
+    
+    public static int CalculateMax(int[] numbers)
+    {
+        if (numbers == null || numbers.Length == 0)
+        {
+            throw new ArgumentException("Array cannot be null or empty.");
+        }
+
+        int max = numbers[0];
+        foreach (int n in numbers)
+        {
+            if (n > max)
+            {
+                max = n;
+            }
+        }
+        return max;
+    }
 }
