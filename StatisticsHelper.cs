@@ -35,7 +35,9 @@ public class StatisticsHelper
     
     public static int CalculateMin(int[] numbers)
     {
-        // Skeleton: logic to be added in next commit
-        return 0;
+        if (numbers == null || numbers.Length == 0) throw new ArgumentException("Empty array");
+        int min = numbers[0];
+        foreach (var n in numbers) if (n < min) min = n;
+        return min;
     }
 }
